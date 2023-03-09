@@ -5,7 +5,7 @@ import 'package:flutter_design_pattern/features/main_menu/domain/entities/patter
 class Category extends Equatable{
   String? id;
   String? title;
-  String? color;
+  int? color;
   List<DPattern>? patterns;
 
   Category({this.id, this.title, this.color, this.patterns});

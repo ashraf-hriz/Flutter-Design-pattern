@@ -6,7 +6,7 @@ class CategoryModel extends Category {
   CategoryModel({
     String? id,
     String? title,
-    String? color,
+    int? color,
     List<DPatternModel>? patterns,
   }) : super(
           id: id,
@@ -18,7 +18,7 @@ class CategoryModel extends Category {
   CategoryModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     title = json['title'];
-    color = json['color'];
+    color = int.tryParse(json['color'].toString());
     patterns = List<DPatternModel>.from(json['patterns'].map((e)=>DPatternModel.fromJson(e)));
     /*if (json['patterns'] != null) {
       patterns = <DPatternModel>[];
