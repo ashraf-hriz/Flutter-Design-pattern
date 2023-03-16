@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => di.sl<MainCubit>()..getDesignPatternCategories(),
+          create: (context) => di.sl<MainCubit>(),//..getDesignPatternCategories(),
         ),
       ],
       child: MaterialApp(

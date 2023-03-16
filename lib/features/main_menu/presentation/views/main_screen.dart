@@ -16,6 +16,16 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    /* var mainCubit = MainCubit.get(context);
+    mainCubit.getDesignPatternCategories(); */
+    MainCubit.get(context).getDesignPatternCategories();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

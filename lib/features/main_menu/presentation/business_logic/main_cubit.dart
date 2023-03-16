@@ -1,17 +1,20 @@
-import 'package:bloc/bloc.dart';
+
 import 'package:dartz/dartz.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_design_pattern/features/main_menu/domain/entities/category.dart';
 import 'package:flutter_design_pattern/features/main_menu/domain/repository/categories_repository.dart';
-import 'package:meta/meta.dart';
+
 
 import '../../../../core/error/failures.dart';
 
 part 'main_state.dart';
 
 class MainCubit extends Cubit<MainState> {
+
   final CategoriesRepo categoriesRepo;
   MainCubit({required this.categoriesRepo}) : super(MainInitial());
 
+  static MainCubit get(context) => BlocProvider.of(context);
 
   getDesignPatternCategories() async{
     var failureOrCategories = await categoriesRepo.getCategories();

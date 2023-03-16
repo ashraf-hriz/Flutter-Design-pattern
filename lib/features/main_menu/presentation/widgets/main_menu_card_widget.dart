@@ -4,6 +4,7 @@ import 'package:flutter_design_pattern/features/main_menu/domain/entities/catego
 import 'package:flutter_design_pattern/features/main_menu/domain/entities/pattern.dart';
 
 import '../../../../core/constants/layout_constants.dart';
+import '../views/design_pattern_detailes_screen.dart';
 
 class MainMenuCard extends StatelessWidget {
   const MainMenuCard({Key? key, required this.category}) : super(key: key);
@@ -100,7 +101,15 @@ class _DesignPatternTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       child: InkWell(
-        //onTap: () => DesignPatternDetailsRoute(designPattern.id).go(context),
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DesignPatternDetailsScreen(
+                  pattern: designPattern,
+                ),
+              ));
+        },
         child: Padding(
           padding: const EdgeInsets.only(
             top: LayoutConstants.paddingM,
