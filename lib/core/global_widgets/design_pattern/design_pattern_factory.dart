@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_design_pattern/core/global_widgets/design_pattern/factory_method/factory_method_example.dart';
 
 class DesignPatternsFactoryException implements Exception {
   final String message;
@@ -11,6 +12,8 @@ class DesignPatternFactory {
 
   static Widget create(String id) {
     switch (id) {
+      case 'factory-method':
+        return const FactoryMethodExampleScreen();
      /*  case 'abstract-factory':
         return const AbstractFactoryExample();
       case 'factory-method':
@@ -31,8 +34,7 @@ class DesignPatternFactory {
         return const DecoratorExample();
       case 'facade':
         return const FacadeExample();
-      case 'factory-method':
-        return const FactoryMethodExample();
+      
       case 'flyweight':
         return const FlyweightExample();
       case 'interpreter':
